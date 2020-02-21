@@ -14,6 +14,7 @@ namespace duplicate.Facebook
         {
             if (!request.RequestUri.AbsolutePath.Contains("/oauth"))
             {
+            //chnage ? with & in the token
                 request.RequestUri = new Uri(request.RequestUri.AbsoluteUri.Replace("?access_token", "&access_token"));
             }
             return await base.SendAsync(request, cancellationToken);
