@@ -10,6 +10,8 @@ using Microsoft.Owin.Security.OAuth;
 using Owin;
 using duplicate.Providers;
 using duplicate.Models;
+using Microsoft.Owin.Security.Facebook;
+using duplicate.Facebook;
 
 namespace duplicate
 {
@@ -56,8 +58,18 @@ namespace duplicate
             //    consumerSecret: "");
 
             //app.UseFacebookAuthentication(
-            //    appId: "",
-            //    appSecret: "");
+            //    appId: "611541859689088",
+            //    appSecret: "21f2665e0aed11867fcd8d35e67d6068");
+            var facebookOptions = new FacebookAuthenticationOptions()
+            {
+                AppId = "160811734413146",
+                AppSecret = "21f2665e0aed11867fcd8d35e67d6068",
+                BackchannelHttpHandler = new FacebookBackChannelHandler(),
+                UserInformationEndpoint = "https://graph.facebook.com/v2.4/me?fields=id,email"
+            };
+
+            facebookOptions.Scope.Add("email");
+            app.UseFacebookAuthentication(facebookOptions);
 
             app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             {
