@@ -75,12 +75,14 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
-        get
-            $('#linkClose').click(function () {
-                $('#divError').hide('fade');
-            });
+            getAccessToken();
+        
             $('#btnGoogleLogin').click(function () {
                 window.location.href = "/api/Account/ExternalLogin?provider=Google&response_type=token&client_id=self&redirect_uri=https%3A%2F%2Flocalhost%3A44315%2FLogin.html";
+            });
+
+            $('#linkClose').click(function () {
+                $('#divError').hide('fade');
             });
 
             $('#btnLogin').click(function () {

@@ -228,6 +228,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EmployeeDataModal.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Facebook\FacebookBackChannelHandler.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -246,7 +247,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Data.html" />
-    <Content Include="EmployeeAuthentiction.Html" />
+    <Content Include="Register.html" />
     <Content Include="EmployeeDataModal.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>EmployeeDataModal.edmx</DependentUpon>
